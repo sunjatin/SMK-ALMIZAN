@@ -158,11 +158,7 @@
                 <li><a href="#">Persyaratan</a></li>               
               </ul>   
                <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login<span class="fa fa-angle-down"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="/loginuser">Login SIS/SIG</a></li>                
-                <li><a href="#">Login Ujian</a></li>            
-              </ul>      
+              <a href="/loginuser">Login<span class="fa fa-angle-down"></span></a>   
           </ul>                     
         </div><!--/.nav-collapse -->        
       </div>     

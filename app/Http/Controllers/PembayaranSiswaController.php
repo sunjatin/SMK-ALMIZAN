@@ -20,9 +20,11 @@ class PembayaranSiswaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+
     {
+
         // mengambil data dari table pegawai
-       $pembayaran_tabel = DB::table('pembayaran_tabel','user')->orderBy('created_at', 'dsc')->paginate(10);
+       $pembayaran_tabel = \App\PembayaranSiswa::all();
  
         // mengirim data pegawai ke view index
        return view('pembayaran.historiadmin', ['pembayaran_tabel'=>$pembayaran_tabel]);  
@@ -51,7 +53,7 @@ class PembayaranSiswaController extends Controller
     {
     $pembayaran_tabel= new PembayaranSiswa;
     $pembayaran_tabel=\App\PembayaranSiswa::create($request->all());
-    return redirect('/pembayaransiswa');
+    return redirect()->to('/list_siswa')->with(['success' => 'Data Siswa Berhasil Dibayar']);
     }
 
     /**
@@ -60,9 +62,10 @@ class PembayaranSiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($user_id)
     {
-        //
+        $pembayaran_tabel = PembayaranSiswa::where('user_id', $user_id)->first();
+        return view('print.cetakslip_pembayaran')->with('pembayaran_tabel', $pembayaran_tabel);
     }
 
     /**

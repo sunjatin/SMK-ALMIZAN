@@ -68,11 +68,11 @@
             </div>
           </a>
           <div class="dropdown-divider"></div>
-          <!-- Pengaturan -->
+          <!-- Change Pasword -->
           <a href="/user/edituser" class="dropdown-item">
             <div class="media">
               <div class="media-body">
-                <h3 class="dropdown-item-title"><i class="fa fa-cog"></i> Pengaturan</h3>
+                <h3 class="dropdown-item-title"><i class="fa fa-cog"></i> Ganti Password</h3>
               </div>
             </div>
           </a>
@@ -88,7 +88,6 @@
           <div class="dropdown-divider"></div>
         </div>
       </li>
-
 
 
       <!-- Messages Dropdown Menu -->
@@ -222,6 +221,18 @@
                   <p>Timeline</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="/tabunganku" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tabunganku</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/osis" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Pemilihan Osis</p>
+                </a>
+              </li>
           @if(auth()->user()->role=='guru') 
               <li class="nav-item">
                 <a href="/profil_guru" class="nav-link">
@@ -240,6 +251,20 @@
           @endif
 
           @if(auth()->user()->role=='admin')  
+               <li class="nav-item">
+                <a href="/profil_guru" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data Guru</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/honor_user" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Honor</p>
+                </a>
+              </li>
+            </ul>
+          </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
@@ -304,6 +329,22 @@
                 </a>
               </li>
             </ul>
+            <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                Ujian
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/admin_tambahdata" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Index Ujian</p>
+                </a>
+              </li>
+            </ul>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
@@ -320,7 +361,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="p_guru" class="nav-link">
+                <a href="/useronline" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Guru</p>
                 </a>
@@ -344,8 +385,18 @@
                 </a>
               </li>
             </ul>
+
 @endif
 @if(auth()->user()->role=='siswa')  
+            <li class="nav-item has-treeview">
+            <a href="/index_ujian" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                Ujian
+                <i class=""></i>
+              </p>
+            </a>
+
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
@@ -411,7 +462,7 @@
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy;2019-2020 <a href="https://wa.me/6285321862797">Jabbarmuhammad20</a>.</strong>
+    <strong>Copyright &copy;2020-2021 <a href="https://wa.me/6285321862797">Jabbarmuhammad20</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 3.0.2
@@ -514,8 +565,80 @@
       "responsive": true,
     });
   });
-  
 
+    // script js untuk data tabel tagihan siswa
+  $(function () {
+    $("#example7").DataTable({
+      "responsive": true,
+      "autoWidth": false,
+    });
+    $('#example8').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+// script untuk histori admin
+  $(function () {
+    $("#example9").DataTable({
+      "responsive": true,
+      "autoWidth": false,
+    });
+    $('#example10').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": false,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+      "dsc":true,
+    });
+  });
+
+    $(function () {
+    $('#indexujian').DataTable({
+      "paging": false,
+      "lengthChange": true,
+      "searching": false,
+      "ordering": false,
+      "info": true,
+      "autoWidth": true,
+      "responsive": true,
+      "dsc":true,
+    });
+  });
+
+    $(function () {
+    $('#daftarujian').DataTable({
+      "paging": true,
+      "lengthChange": true,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": true,
+      "responsive": true,
+      "dsc":true,
+    });
+  }); 
+    $(function () {
+    $('#evoting').DataTable({
+      "paging": true,
+      "lengthChange": true,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": true,
+      "responsive": true,
+      "dsc":true,
+    });
+  });
+
+    
 </script>
 </body>
 </html>

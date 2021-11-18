@@ -47,7 +47,7 @@
                   </div>
                    <div class="form-group">
                     <label for="exampleInputEmail1">Sumber dana</label>
-                    <input type="text" class="form-control" id="sumber_dana" name="sumber_dana"placeholder="Sumber Dana">
+                    <input type="text" class="form-control" id="sumber_dana" name="sumber_dana" value="-">
                   </div>
                   <div class="form-group row">
                   <label for="kelas" class="col-sm-2 control-label">KIP</label>
@@ -82,14 +82,14 @@
                   </div>
                     <div class="form-group">
                     <label for="exampleInputEmail1">Bulan</label>
-                    <input type="text" class="form-control" id="bulan" name="bulan" value= "0">
+                    <input type="text" class="form-control" id="bulan" name="bulan" value= "-">
                   </div>
                     <div class="form-group">
                     <label for="exampleInputEmail1">Ket</label>
                     <input type="text" class="form-control" id="ket" name="ket"  value= "0">
                   </div>
               	<div class="card-footer">
-                  <button type="submit" class="btn btn-info">Tambah</button>
+                  <button type="submit" class="btn btn-info">Bayar</button>
                   <button type="submit" class="btn btn-default float-right">Cancel</button>
                 </div>
                 </form>

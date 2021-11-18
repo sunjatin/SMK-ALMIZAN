@@ -27,7 +27,7 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <table id="example1" class="table table-bordered table-hover">
+              <table id="example3" class="table table-bordered table-hover">
                 <thead>
                 <tr>
                   <th>No</th>
@@ -42,36 +42,27 @@
                   <th>Ujikom</th>
                   <th>SPP</th>
                   <th>Tanggal Pembayaran</th>
-                  
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
+                  
                   @php $no = 1; @endphp
                   @foreach($pembayaran_tabel as $pembayaran)
                   <td><a href="">{{$no++}}</a></td>
                   <td><a href="">{{$pembayaran->user_id}}</a></td>
                   <td><a href="">{{$pembayaran->nama_teller}}</a></td>
-                  <td><a href="">{{$pembayaran->kip}}</a></td>
-                  <td><a href="">{{$pembayaran->pem_pertama}}</a></td>
-                  <td><a href="">{{$pembayaran->dana_tahunan}}</a></td>
-                  <td><a href="">{{$pembayaran->daftar_ulang}}</a></td>
-                  <td><a href="">{{$pembayaran->dana_akhir_tahun}}</a></td>
-                  <td><a href="">{{$pembayaran->prakerin}}</a></td>
-                  <td><a href="">{{$pembayaran->ujikom}}</a></td>
-                  <td><a href="">{{$pembayaran->spp}}</a></td>
+                  <td><a href="">@currency ($pembayaran->kip)</a></td>
+                  <td><a href="">@currency ($pembayaran->pem_pertama)</a></td>
+                  <td><a href="">@currency ($pembayaran->dana_tahunan)</a></td>
+                  <td><a href="">@currency ($pembayaran->daftar_ulang)</a></td>
+                  <td><a href="">@currency ($pembayaran->dana_akhir_tahun)</a></td>
+                  <td><a href="">@currency ($pembayaran->prakerin)</a></td>
+                  <td><a href="">@currency ($pembayaran->ujikom)</a></td>
+                  <td><a href="">@currency ($pembayaran->spp),{{$pembayaran->bulan}}</a></td>
                    <td><a href="">{{$pembayaran->created_at}}</a></td>
-
                 </tr>               
                   @endforeach
               </table>
             </div>
-  Halaman : {{ $pembayaran_tabel->currentPage() }} <br/>
-  Jumlah Data : {{ $pembayaran_tabel->total() }} <br/>
-  Data Per Halaman : {{ $pembayaran_tabel->perPage() }} <br/>
- 
- 
-  {{ $pembayaran_tabel->links() }}
- 
-            <!-- /.card-body -->
 @endsection

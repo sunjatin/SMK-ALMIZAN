@@ -15,6 +15,22 @@ use Auth;
 class UserController extends Controller
 {
 
+public function getlist(Request $Request) 
+        {
+        $users = User::select("id","name")->get();
+            foreach ($users as $user){
+                if($user->inOnline()){
+                    $user->status="Online";
+                } 
+                else 
+                {
+                    $user->status="Offline";
+                }
+            }
+         return view('admin.online');
+         }
+
+
     public function index() 
         {
             $users = User::all();
@@ -36,6 +52,7 @@ class UserController extends Controller
     public function update(Request $request, $id) 
         {
             $users = User::find($id);
+            $users->role = $request->role;
             $users->name = $request->name;
             $users->email = $request->email;
             $users->password = Hash::make($request->password);

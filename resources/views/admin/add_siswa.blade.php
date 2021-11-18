@@ -39,7 +39,7 @@
                  <div class="card-body">  
                   <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" name="email"placeholder="Enter email">
+                    <input type="text" class="form-control" id="exampleInputEmail1" name="email"placeholder="Enter email">
                   </div>
                   <div class="form-group row">
                   <label for="kelas" class="col-sm-2 control-label">Role</label>

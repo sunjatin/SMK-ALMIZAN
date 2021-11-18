@@ -18,7 +18,7 @@
         <span></span>
         <h2>Menerima Peserta Didik Baru</h2>
         <p>Program Keahlian, Teknik Komputer dan Jaringan. Perbankan Syariah. Tata Busana. Teknik Bisnis Sepeda Motor.</p>
-        <a href="calonsiswa/create" class="mu-read-more-btn">Daftar Siswa Baru </a>
+        <a href="http://ppdb.smkmaarifalmizanjtw.sch.id" class="mu-read-more-btn" target="blank">Daftar Siswa Baru </a>
       </div>
     </div>
     <!-- Start single slider item -->
@@ -34,7 +34,7 @@
         <span></span>
         <h2>Best Teacher</h2>
         <p>Belajar bersama guru profesional dalam bidangnya</p>
-        <a href="calonsiswa/create" class="mu-read-more-btn">Daftar Siswa Baru</a>
+        <a href="http://ppdb.smkmaarifalmizanjtw.sch.id" class="mu-read-more-btn" target="blank">Daftar Siswa Baru</a>
       </div>
     </div>
     <!-- Start single slider item -->
@@ -50,7 +50,7 @@
         <span></span>
         <h2>SMK MA'ARIF AL-MIZAN</h2>
         <p>menggali minat dan bakat siswa bersama smk ma'aarif Al-Mizan.</p>
-        <a href="calonsiswa/create" class="mu-read-more-btn">Daftar Siswa Baru</a>
+        <a href="http://ppdb.smkmaarifalmizanjtw.sch.id" class="mu-read-more-btn" target="blank">Daftar Siswa Baru</a>
       </div>
     </div>
     <!-- Start single slider item -->    

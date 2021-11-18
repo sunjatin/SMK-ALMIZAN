@@ -36,6 +36,7 @@
         Please check the form below for errors
     </div>
     @endif
+
 <!-- Main content -->
 <p></p>
 <div class="col-lg-12">
@@ -46,7 +47,7 @@
 		<div class="card-body">
 			<center>
 			<p class="card-text">Unduh Data Sebelum Menghapus Data User</p>
-			<a href="/delete_all_siswa" class="btn bg-gradient-danger"><i class="fas fa-trash"></i> Hapus Data</a>&nbsp&nbsp
+			<a href="#" class="btn bg-gradient-danger"><i class="fas fa-trash"></i> Hapus Data</a>&nbsp&nbsp
 			<a href="/exportexceluser" class="btn bg-gradient-success"><i class="fas fa-download"></i> Unduh Data</a>
 			<p></p>
 			
@@ -91,15 +92,13 @@
 					<td class="text-info">{{$usr->email}}</td>
 					<td>{{ucfirst($usr->role)}}</td>
 					<td>
-						<a href=""><i class="fas fa-plus mr-1"></i></a>
-						<a href="/user/editadmin/{{$usr->id}}"><i class="fas fa-edit text-warning mr-1"></i></a>
-						<a href="/user/destroy/{{ $usr->id }}"><i class="fas fa-trash text-danger" onclick="return confirm('Yakin ingin menghapus data?')"></i></a>
+					<a href=""><i class="fas fa-plus mr-1"></i></a>
+					<a href="/user/editadmin/{{$usr->id}}"><i class="fas fa-edit text-warning mr-1"></i></a>
+					<a href="/user/destroy/{{ $usr->id }}"><i class="fas fa-trash text-danger" onclick="return confirm('Yakin ingin menghapus data?')"></i></a>
 					</td>
 				</tr>
 			@endforeach
 	        </tbody>
 	      </table>
 		</div>
-	    <!-- /.card-body -->
-
 @endsection

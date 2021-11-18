@@ -55,7 +55,36 @@
             <div class="timeline">
               <!-- timeline time label -->
               <div class="time-label">
-                <span class="bg-red">12 April 2020</span>
+                <span class="bg-red">02 Oktober 2021</span>
+              </div>
+              <!-- /.timeline-label -->
+              <!-- timeline item -->
+              <div>
+                <i class="fas fa-envelope bg-blue"></i>
+                <div class="timeline-item">
+                  <span class="time"><i class="fas fa-clock"></i> 08.00</span>
+                  <h3 class="timeline-header"><a href="#">Panitia Prakerin</a></h3>
+
+                  <div class="timeline-body">
+                    Sistematika Penulisan Laporan <a href="https://drive.google.com/file/d/1CR3ew-8g0AOiM7sVYdPwJpzMop6yhBV_/view?usp=sharing" target="blank">Download</a><br>
+                    
+                    Logo SMK Ma'arif Al-Mizan <a href="https://drive.google.com/file/d/1hmmAZS8n7K6TX6Ujta3GGNuDksuceFW1/view?usp=sharing" target="bank">Download</a><br>
+                    Pembagian Pembimbing Laporan <a href="https://drive.google.com/file/d/1ALUo59l3L3bKgVBXOGQ5p0ifyzo5vvmF/view?usp=sharing" target="blank">Donwload</a><br>
+
+                  </div>
+                 
+                </div>
+              </div>
+              <!-- END timeline item -->
+              
+              <!-- Timelime example  -->
+        <div class="row">
+          <div class="col-md-12">
+            <!-- The time line -->
+            <div class="timeline">
+              <!-- timeline time label -->
+              <div class="time-label">
+                <span class="bg-red">02 Oktober 2020</span>
               </div>
               <!-- /.timeline-label -->
               <!-- timeline item -->

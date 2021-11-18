@@ -62,7 +62,7 @@
         <th>Nama Siswa</th>
         <th>Tempat, Tanggal Lahir</th>
         <th>NISN</th>
-        <th>Jurusan</th>
+        <th>Kelas</th>
         <th>aksi</th>
         </tr>
       </thead>
@@ -75,9 +75,10 @@
           <td><a href="#">{{$siswa->namsis}}</a></td>
           <td><a href="#">{{$siswa->tem_lahir}}, {{$siswa->tgl_lahir}}</a></td>
           <td><a href="#">{{$siswa->nisn}}</a></td>
-          <td><a href="#">{{$siswa->jurusan}}</a></td>
+          <td><a href="#">{{$siswa->kelas}} {{$siswa->jurusan}}</a></td>
           <td class="float right"><center>
-          <a href="{{action('PembayaranSiswaController@create', $siswa->user_id)}}" class="btn bg-gradient-primary btn-sm" title="Pembayaran"><i class="fas fa-book"></a></i>
+          <a href="{{action('KeuanganSiswaController@show', $siswa->user_id)}}" class="btn bg-gradient-primary btn-sm" title="Pembayaran"><i class="fas fa-book"> Bayar</a></i>
+          
           <a href="{{action('SiswaController@show', $siswa->id)}}" class="btn bg-gradient-primary btn-sm" title="Lihat Data"><i class="fas fa-search"></a></i>
           <a href="{{action('SiswaController@suket_siswa', $siswa->id)}}" class="btn bg-gradient-primary btn-sm" title="Suket"><i class="fas fa-desktop"></i> </a>
           <a href="{{action('SiswaController@edit_siswaadmin', $siswa->id)}}" class="btn bg-gradient-warning btn-sm" title="Ubah Data"><i class="fas fa-edit"></a></i>
@@ -109,7 +110,7 @@
                  <div class="card-body">  
                     <div class="form-group {{$errors->has('email')? 'has-errors':''}}">
                       <label for="exampleInputEmail1">Email address*</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" name="email"placeholder="Enter email" value="{{old('email')}}">
+                      <input type="text" class="form-control" id="exampleInputEmail1" name="email"placeholder="Enter email" value="{{old('email')}}">
                       @if($errors->has('email'))
                       <span class="bg-gradient-danger">{{$errors->first('email')}}</span>
                       @endif

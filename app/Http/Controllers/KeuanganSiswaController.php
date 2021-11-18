@@ -59,9 +59,9 @@ class KeuanganSiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($user_id)
     {
-          $keuangan_tabel = KeuanganSiswa::where('id', $id)->first();
+          $keuangan_tabel = KeuanganSiswa::where('user_id', $user_id)->first();
         return view('keuangan.lihat_tagihanadmin')->with('keuangan_tabel', $keuangan_tabel);
     }
 

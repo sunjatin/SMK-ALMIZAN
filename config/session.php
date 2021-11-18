@@ -195,5 +195,7 @@ return [
     */
 
     'same_site' => null,
+    // Sesi
+    'secure' => env('SESSION_SECURE_COOKIE', null),
 
 ];

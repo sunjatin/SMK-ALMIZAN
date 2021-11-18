@@ -2,14 +2,17 @@
 @section('content')
 
 <form action="{{ route('user.update', $users->id) }}" method="POST" enctype="multipart/form-data">
-	   {{csrf_field() }}
-       {{ method_field('PUT') }}
+  {{csrf_field() }}
+  {{ method_field('PUT') }}
   <div class="form-group">
+    <label for="role">Role</label>
+    <input type="text" class="form-control" name="role" id="role" aria-describedby="emailHelp" value="{{ $users->role}}">
+
     <label for="exampleInputEmail1">Nama Akun</label>
     <input type="text" class="form-control" name="name"id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" value="{{ $users->name}}">
 
     <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" name="email"id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" value="{{ $users->email}}">
+    <input type="text" class="form-control" name="email"id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" value="{{ $users->email}}">
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
 

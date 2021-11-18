@@ -18,70 +18,68 @@
     </section>
 
     <!-- Main content -->
-    <section class="content">
-      <div class="row">
-        <div class="col-12">
-          <div class="card">
+  <section class="content">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
           <div class="card-header navbar-light">
-          <form action="/carisiswa"class="form-inline ml-3" method="get">
-            <div class="input-group input-group-sm">
-                <input class="form-control form-control-navbar" name="cari"type="search" placeholder="Search" aria-label="Search">
-                <div class="input-group-append">
-                <button class="btn btn-navbar" type="submit">
-                <i class="fas fa-search"> </i>
-                </button>
-              </div>
-              <button type="button" class="btn bg-gradient-primary btn-sm" data-toggle="modal" data-target="#tambah">Tambah Keuangan</button>
-            </div>
-          </form>
-             
+          <button type="button" class="btn bg-gradient-primary btn-sm" data-toggle="modal" data-target="#tambah">Tambah Keuangan</button>
+          </div>
+            <div class="card-body">
+             <table id="example7" class="table table-bordered table-striped table-hover">
+              <thead class="thead-dark">
+                <tr>
+                  <th>No</th>
+                  <th>User Id</th>
+                  <th>Akun Siswa</th>
+                  <th>Saldo KIP</th>
+                  <th>Pem Pertama</th>
+                  <th>dana Tahunan</th>
+                  <th>Daftar Ulang</th>
+                  <th>Dana Akhir Th.</th>
+                  <th>SPP</th>
+                  <th>Ket.</th>
+                  <th>aksi <a href="/exportexcelkeuangan" class="btn bg-gradient-success btn-sm" title="Donwload Excel"><i class="fas fa-download"></i></a></th>
+                </tr>
+                </thead>
+                <tbody>        
+    
+                @php $no = 1; @endphp
+                @foreach($keuangan_tabel as $keuangan)
+                <tr>
+                  <td><a href="{{action('KeuanganSiswaController@show', $keuangan->user_id)}}">{{$no++}}</a></td>
 
-<div class="card-body">
-  <table id="example6" class="table table-bordered table-striped table-hover">
-  <thead class="thead-dark">
-    <tr>
-      <th>No</th>
-      <th>User Id</th>
-      <th>Akun Siswa</th>
-      <th>Saldo KIP</th>
-      <th>Pem Pertama</th>
-      <th>dana Tahunan</th>
-      <th>Daftar Ulang</th>
-      <th>Dana Akhir Th.</th>
-      <th>SPP</th>
-      <th>Ket.</th>
-      <th>aksi <a href="/exportexcelkeuangan" class="btn bg-gradient-success btn-sm" title="Donwload Excel"><i class="fas fa-download"></i></a></th>
-    </tr>
-    </thead>
-    <tbody>        
-    <tr>
-          @php $no = 1; @endphp
-          @foreach($keuangan_tabel as $keuangan)
-          <td><a href="{{action('KeuanganSiswaController@show', $keuangan->id)}}">{{$no++}}</a></td>
-          <td><a href="{{action('KeuanganSiswaController@show', $keuangan->id)}}">{{$keuangan->user_id}}</a></td>
-          <td><a href="{{action('KeuanganSiswaController@show', $keuangan->id)}}">{{$keuangan->User->name}}</a></td>
-          <td><a href="{{action('KeuanganSiswaController@show', $keuangan->id)}}">{{$keuangan->kip}}</a></td>
-          <td><a href="{{action('KeuanganSiswaController@show', $keuangan->id)}}">{{$keuangan->pem_pertama}}</a></td>
-          <td><a href="{{action('KeuanganSiswaController@show', $keuangan->id)}}">{{$keuangan->dana_tahunan}}</a></td>
-          <td><a href="{{action('KeuanganSiswaController@show', $keuangan->id)}}">{{$keuangan->daftar_ulang}}</a></td>
-          <td><a href="{{action('KeuanganSiswaController@show', $keuangan->id)}}">{{$keuangan->dana_akhir_tahun}}</a></td>
-          <td><a href="{{action('KeuanganSiswaController@show', $keuangan->id)}}">{{$keuangan->spp}}</a></td>
-          <td><a href="{{action('KeuanganSiswaController@show', $keuangan->id)}}">{{$keuangan->ket}}</a></td>
+                  <td><a href="{{action('KeuanganSiswaController@show', $keuangan->user_id)}}">{{$keuangan->user_id}}</a></td>
 
-          <td class="float right"><center>
-          <a href="{{action('PembayaranSiswaController@create', $keuangan->user_id)}}" class="btn bg-gradient-primary btn-sm" title="Pembayaran"><i class="fas fa-book"></a></i></a>
-          <a href="{{action('KeuanganSiswaController@edit', $keuangan->user_id)}}" class="btn bg-gradient-warning btn-sm" title="Ubah Data"><i class="fas fa-edit"></a></i>
+                  <td><a href="{{action('KeuanganSiswaController@show', $keuangan->user_id)}}">{{$keuangan->User->name}}</a></td>
 
-          <a href="/keuangan/destroy/{{$keuangan->id}}" class="btn bg-gradient-danger btn-sm" title="Hapus Data" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fas fa-trash"></i>
-          {{ method_field('DELETE') }}
-          </center></a>
-          </td>
-      @endforeach
-          </tr>              
-      </tbody>
+                  <td><a href="{{action('KeuanganSiswaController@show', $keuangan->user_id)}}">@currency ($keuangan->kip)</a></td>
+
+                  <td><a href="{{action('KeuanganSiswaController@show', $keuangan->user_id)}}">@currency ($keuangan->pem_pertama)</a></td>
+
+                  <td><a href="{{action('KeuanganSiswaController@show', $keuangan->user_id)}}">@currency ($keuangan->dana_tahunan)</a></td>
+
+                  <td><a href="{{action('KeuanganSiswaController@show', $keuangan->user_id)}}">@currency ($keuangan->daftar_ulang)</a></td>
+
+                  <td><a href="{{action('KeuanganSiswaController@show', $keuangan->user_id)}}">@currency ($keuangan->dana_akhir_tahun)</a></td>
+
+                  <td><a href="{{action('KeuanganSiswaController@show', $keuangan->user_id)}}">@currency ($keuangan->spp)</a></td>
+
+                  <td><a href="{{action('KeuanganSiswaController@show', $keuangan->user_id)}}">{{$keuangan->ket}}</a></td>
+
+                  <td class="float right"><center>
+                  <a href="{{action('PembayaranSiswaController@create', $keuangan->user_id)}}" class="btn bg-gradient-primary btn-sm" title="Pembayaran"><i class="fas fa-book"></a></i></a>
+                  <a href="{{action('KeuanganSiswaController@edit', $keuangan->user_id)}}" class="btn bg-gradient-warning btn-sm" title="Ubah Data"><i class="fas fa-edit"></a></i>
+
+                  <a href="/keuangan/destroy/{{$keuangan->id}}" class="btn bg-gradient-danger btn-sm" title="Hapus Data" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fas fa-trash"></i>
+                  {{ method_field('DELETE') }}
+                  </center></a>
+                 </td> 
+                 </tr>
+              @endforeach
+            </tbody>
     </table>
-  </div>  
-            <!-- Modal -->
+<!-- Modal Tambah Keuangan-->
 <div class="modal fade" id="tambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">

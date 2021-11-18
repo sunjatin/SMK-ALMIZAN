@@ -55,7 +55,6 @@ class SiswaController extends Controller
     {
         $this->validate($request,[
             'namsis'=>'min:5',
-            'email'=>'required|email|unique:users',
             'tgl_lahir'=>'required',
             'jurusan'=>'required',
             'tem_lahir'=>'required',
@@ -128,12 +127,6 @@ class SiswaController extends Controller
          $siswa_tabel= Siswa::where('id', $id)->first();
          $siswa_tabel->fill($request->all());
          $siswa_tabel->update();
-
-        //$file = $request->file('avatar');
-        //$nama_file = $file->getClientOriginalName();
-        //$file->move('imgsiswa',$nama_file);
-        //$siswa_tabel->avatar=$request->file('avatar')->getClientOriginalName();
-        //$siswa_tabel->save();
         
         return redirect()->to('/admin');
     }
@@ -148,7 +141,7 @@ class SiswaController extends Controller
         {
         DB::table('siswa_tabel')->where('id',$id)->delete();
         // alihkan halaman ke halaman siswa
-        return redirect()->to('/list_siswa')->with('alert-success','Data berhasi dihapus!');
+        return redirect()->to('/list_siswa')->with(['success' => 'Data Siswa Berhasil Dihapus']);
         }
 
 

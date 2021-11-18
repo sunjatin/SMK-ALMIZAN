@@ -56,13 +56,16 @@ Route::get('/contact', function(){
 		Route::get('/p_user','UserController@index');
 		Route::post('/user/update/','UserController@update');
 		Route::get('/user/editadmin/{id}','UserController@edit_admin');
-		Route::get('/user/edituser','UserController@show');
+		Route::get('/user/edituser','PasswordController@change')->name('password.change');
 		Route::get('/user/destroy/{id}','UserController@destroy');
+		Route::get('/useronline','UserController@getlist');
+
 
 		Route::get('/p_keuangan', function(){
 			return view('/admin.p_keuangan');
 			});
 		Route::resource('/siswa','SiswaController');
+		Route::get('list_siswa','SiswaController@index')->name('list_siswa');
 		Route::get('/siswa/create','SiswaController@create');
 		Route::post('/tambahsiswa','SiswaController@store');
 		Route::get('/siswa/editsiswa/{id}/','SiswaController@edit');
@@ -77,6 +80,8 @@ Route::get('/contact', function(){
 		
 		Route::resource('pembayaransiswa','PembayaranSiswaController');
 		Route::get('/pembayaran/historypembayaran/{id}/','PembayaranSiswaController@histori_pembayaran');
+// Route Tabungan User
+		Route::get('/tabunganku','TabunganController@index');
 });
 
 /*middleware*/
@@ -124,3 +129,22 @@ Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::put('/password', 'PasswordController@update')->name('password.update');
+});
+
+
+Route::resource('/ujian','UjianController');
+Route::get('/index_ujian','UjianController@index');
+Route::get('/admin_tambahdata','UjianController@create');
+Route::post('/tambahujian','UjianController@store');
+Route::get('/admin_editdata/{id}','UjianController@edit');
+Route::post('/admin_updatedata','UjianController@update');
+Route::get('/ujian/destroy/{id}','UjianController@destroy');
+
+Route::resource('/osis','OsisController');
+Route::get('/export_osis','OsisController@exportexcelosis');
+Route::get('/destroy_all_osis','OsisController@destroy_all');

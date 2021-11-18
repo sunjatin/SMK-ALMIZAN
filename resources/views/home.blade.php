@@ -18,7 +18,7 @@
           </div>
         </div>
         <div class="card-body">
-          Mohon Melengkapi Data diri klik : <a href="/data_siswa">Data Diri </a> Lalu pilih ->Edit Siswa dan Simpan 
+          Mohon Segera Ganti Password Anda : <a href="/user/edituser">GANTI PASSWORD</a> 
         </div>
         <!-- /.card-body -->
         <div class="card-footer">

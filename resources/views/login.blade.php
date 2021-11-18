@@ -21,7 +21,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="/"><b>Sistem Akademik</b> dan Keuangan</a>
+    <a href="/"><b>Selamat Datang</b></a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
@@ -29,27 +29,39 @@
       <p class="login-box-msg">Sign in to start your session</p>
 
       <form method="POST" action="{{ route('login') }}">
-                        @csrf
+       @csrf
         <div class="input-group mb-3">
-          <input type="email" name="email"class="form-control" placeholder="Email" autofocus="">
+          <input type="text" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="Masukan Nis/Email" required autofocus value="{{ old('email') }}">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
             </div>
           </div>
+          @if ($errors->has('email'))
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $errors->first('email') }}</strong>
+            </span>
+          @endif
         </div>
+
         <div class="input-group mb-3">
-          <input type="password" name="password" class="form-control" placeholder="Password">
+          <input id="password" type="password" value="{{ old('password')}}" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Password" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
             </div>
           </div>
+           @if ($errors->has('password'))
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('password') }}</strong>
+                </span>
+            @endif
         </div>
+
         <div class="row">
           <div class="col-8">
             <div class="icheck-primary">
-              <input type="checkbox" id="remember">
+              <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
               <label for="remember">
                 Remember Me
               </label>
@@ -57,7 +69,7 @@
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <a href="/password/reset"><span class="text-sm float-right">Lupa password?</span></a>
+            <a href="https://wa.me/6283824430157"><span class="text-sm float-right">Bantuan</span></a>
           </div>
           <!-- /.col -->
         </div>
