@@ -17,7 +17,6 @@ class OsisController extends Controller
      */
     public function index()
     {
-       
         $osis_tabel =Osis::all();
         return view('osis.evoting_osis',['osis_tabel'=>$osis_tabel]);
     }
@@ -101,5 +100,24 @@ class OsisController extends Controller
     public function exportexcelosis()
         {
             return Excel::download(new OsisExport,'ExporPemilihanOsis.xlsx');
+        }
+
+    // Untuk menampilkan Evoting Chart
+    public function evotingchart()
+        {
+            Osis::where('pilihan', 1)->count(); //untuk hitung jumlah semua pilihan 1
+            Osis::where('pilihan', 2)->count(); //untuk hitung jumlah pilihan nomor 2
+            Osis::where('pilihan', 3)->count(); //untuk hitung jumlah pilihan nomor 3
+            Osis::where('pilihan', 4)->count(); //untuk hitung jumlah pilihan nomor 4
+            Osis::where('pilihan', 5)->count(); //untuk hitung jumlah pilihan nomor 5
+            
+         
+            return view('osis.evoting_chart', [
+                'totalCalon1' => Osis::where('pilihan', 1)->count(),
+                'totalCalon2' => Osis::where('pilihan', 2)->count(),
+                'totalCalon3' => Osis::where('pilihan', 3)->count(),
+                'totalCalon4' => Osis::where('pilihan', 4)->count(),
+                'totalCalon5' => Osis::where('pilihan', 5)->count(),
+                ]);
         }
 }

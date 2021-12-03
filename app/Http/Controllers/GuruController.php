@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-Use\App\Guru;
-Use\App\Honor;
-Use\App\User;
-Use DB;
+use Guru;
+use Honor;
+use User;
+use DB;
 use Auth;
 
 

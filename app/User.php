@@ -40,6 +40,12 @@ class User extends Authenticatable
     {
       // Setiap user akan memiliki banyak data
       return $this->hashMany('App\Siswa');
+    }     
+
+    public function PembayaranSiswa()
+    {
+      // Setiap user akan memiliki banyak data
+      return $this->hashMany('App\PembayaranSiswa');
     }
 
 }

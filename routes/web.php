@@ -10,9 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/mobilekit', function () {
+    return view('layouts.mobilekit');
+});
+
 Route::get('/', function () {
     return view('beranda');
 });
+
 Route::get('/pengumuman', function () {
     return view('/umum.pengumuman');
 });
@@ -37,6 +42,13 @@ Route::get('/loginuser', function () {
 Route::get('/contact', function(){
 			return view('/contact');
 	});		
+
+Route::get('resetconfig', function (){
+	Artisan::call('route:clear');
+	Artisan::call('cache:clear');
+	Artisan::call('config:clear');
+	Artisan::call('config:cache');
+	});
 
 
 /*role yang bisa diakses oleh admin,guru, siswa*/
@@ -146,5 +158,6 @@ Route::post('/admin_updatedata','UjianController@update');
 Route::get('/ujian/destroy/{id}','UjianController@destroy');
 
 Route::resource('/osis','OsisController');
+Route::get('/evotingchart','OsisController@evotingchart');
 Route::get('/export_osis','OsisController@exportexcelosis');
 Route::get('/destroy_all_osis','OsisController@destroy_all');

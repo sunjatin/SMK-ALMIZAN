@@ -53,5 +53,10 @@ class Siswa extends Model
    {
     return $this->hashMany('App\KeuanganSiswa');
    }
+
+    public function PembayaranSiswa()
+   {
+    return $this->hashMany('App\PembayaranSiswa');
+   }
 }
 

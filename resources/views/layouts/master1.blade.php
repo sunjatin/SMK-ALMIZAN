@@ -265,10 +265,9 @@
   <script type="text/javascript" src="Varsity/assets/js/jquery.mixitup.js"></script>
   <!-- Add fancyBox -->        
   <script type="text/javascript" src="Varsity/assets/js/jquery.fancybox.pack.js"></script>
-  
-  
+
   <!-- Custom js -->
   <script src="Varsity/assets/js/custom.js"></script> 
-
+ 
   </body>
 </html>

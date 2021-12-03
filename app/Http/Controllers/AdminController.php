@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-Use\App\Guru;
-Use\App\Honor;
+Use Guru;
+Use Honor;
 
 class AdminController extends Controller
 {

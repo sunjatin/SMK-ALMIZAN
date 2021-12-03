@@ -26,5 +26,13 @@ class PembayaranSiswa extends Model
    {
     return $this->belongsTo('App\KeuanganSiswa');
    }
+   public function Siswa()
+   {
+    return $this->belongsTo('App\Siswa');
+   }
+   public function User()
+   {
+    return $this->belongsTo('App\User');
+   }
 
 }

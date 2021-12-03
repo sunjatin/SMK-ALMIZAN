@@ -61,7 +61,9 @@
 			<a href="/osis/create" type="button" class="btn btn-primary"> Ayo Memilih</a>
 			@if(auth()->user()->role=='admin')  
 			<a href="/export_osis" type="button" class="btn btn-success"> Export Excel</a>
+      <a href="/evotingchart" type="button" class="btn btn-success"> Chart</a>
 			<a href="/destroy_all_osis" type="button" class="btn btn-danger"> Hapus Semua</a>
+    
 			@endif
 			</div>
             <!-- /.card-header -->
