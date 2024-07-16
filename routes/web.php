@@ -10,12 +10,20 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/', function () {
+    return view('landing');
+});
+
 Route::get('/mobilekit', function () {
     return view('layouts.mobilekit');
 });
 
-Route::get('/', function () {
-    return view('beranda');
+Route::get('/beranda', function(){
+	return view('beranda');
+});
+Route::get('/landing', function(){
+	return view('landing');
 });
 
 Route::get('/pengumuman', function () {
@@ -41,7 +49,8 @@ Route::get('/loginuser', function () {
 	});
 Route::get('/contact', function(){
 			return view('/contact');
-	});		
+	});	
+
 
 Route::get('resetconfig', function (){
 	Artisan::call('route:clear');

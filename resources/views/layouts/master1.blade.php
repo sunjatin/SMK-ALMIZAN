@@ -37,6 +37,7 @@
     <![endif]-->
 
   </head>
+
   <body> 
 @if ($message = Session::get('success'))
       <div class="alert alert-success alert-block">
@@ -117,6 +118,7 @@
     </div>
   </header>
   <!-- End header  -->
+
   <!-- Start menu -->
   <section id="mu-menu">
     <nav class="navbar navbar-default" role="navigation">  
@@ -131,7 +133,7 @@
           </button>
           <!-- LOGO -->              
           <!-- TEXT BASED LOGO -->
-          <a class="navbar-brand" href="/"><i class="fa fa-school"></i><span>SMK MA'ARIF AL-MIZAN</span></a>
+          <a class="navbar-brand" href="/landing"><i class="fa fa-school"></i><span>SMK MA'ARIF AL-MIZAN</span></a>
           <!-- IMG BASED LOGO  -->
           <!-- <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt="logo"></a> -->
         </div>
@@ -181,6 +183,8 @@
     </div>
   </div>
   <!-- End search box -->
+
+
   @yield('content')
   <!-- Start footer -->
   <footer id="mu-footer">
